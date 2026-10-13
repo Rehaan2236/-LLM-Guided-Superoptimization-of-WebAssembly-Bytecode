@@ -1,0 +1,8 @@
+[
+  {
+    "instructions": [
+      "PUSH_INPUT 0"
+    ],
+    "reason": "x + 0 = x (identity of addition)"
+  }
+]

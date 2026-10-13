@@ -1,0 +1,18 @@
+{
+  "max_original_instructions": 12,
+  "max_candidate_instructions": 12,
+  "max_stack_depth": 8,
+  "differential_tests": 1000,
+  "z3_timeout_ms": 5000,
+  "gemini_model": "gemini-3.5-flash",
+  "cache_enabled": true,
+  "llm_feedback_rounds": 3,
+  "gemini_thinking": "low",
+  "gemini_timeout_s": 90,
+  "gemini_fallback_models": [
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-flash-latest",
+    "gemini-3.1-flash-lite"
+  ]
+}

@@ -1,0 +1,10 @@
+file,status,reason,original_instr,rewrite_instr,accepted,z3,wasmopt_instr
+double_add.wasm,unchanged,,3,,False,,3
+x_minus_zero.wasm,accepted,,3,1,True,unsat,1
+x_or_zero.wasm,accepted,,3,1,True,unsat,1
+x_plus_one.wasm,unchanged,,3,,False,,3
+x_plus_zero.wasm,accepted,,3,1,True,unsat,1
+x_times_one.wasm,accepted,,3,1,True,unsat,1
+x_times_two.wasm,unchanged,,3,,False,,3
+x_times_zero.wasm,accepted,,3,1,True,unsat,1
+x_xor_zero.wasm,accepted,,3,1,True,unsat,1

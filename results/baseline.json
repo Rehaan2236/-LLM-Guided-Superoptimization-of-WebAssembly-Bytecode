@@ -1,0 +1,26 @@
+[
+  {
+    "file": "x_plus_zero.wasm",
+    "original_instr": 3,
+    "original_bytes": 38,
+    "wasmopt_instr": 1,
+    "wasmopt_bytes": 35,
+    "note": "wasm-opt reduced the block"
+  },
+  {
+    "file": "x_times_two.wasm",
+    "original_instr": 3,
+    "original_bytes": 38,
+    "wasmopt_instr": 3,
+    "wasmopt_bytes": 38,
+    "note": "wasm-opt left the block unchanged"
+  },
+  {
+    "file": "x_plus_one.wasm",
+    "original_instr": 3,
+    "original_bytes": 38,
+    "wasmopt_instr": 3,
+    "wasmopt_bytes": 38,
+    "note": "wasm-opt left the block unchanged"
+  }
+]

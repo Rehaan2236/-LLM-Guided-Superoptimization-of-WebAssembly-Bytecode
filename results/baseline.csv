@@ -1,0 +1,4 @@
+file,original_instr,original_bytes,wasmopt_instr,wasmopt_bytes,note
+x_plus_zero.wasm,3,38,1,35,wasm-opt reduced the block
+x_times_two.wasm,3,38,3,38,wasm-opt left the block unchanged
+x_plus_one.wasm,3,38,3,38,wasm-opt left the block unchanged

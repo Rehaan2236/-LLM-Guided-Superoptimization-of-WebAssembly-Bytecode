@@ -1,0 +1,10 @@
+[
+  {
+    "instructions": [
+      "PUSH_INPUT 0",
+      "PUSH_INPUT 1",
+      "EQ"
+    ],
+    "reason": "x ^ y == 0 is equivalent to x == y"
+  }
+]

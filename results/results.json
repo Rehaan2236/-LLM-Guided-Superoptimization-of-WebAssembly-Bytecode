@@ -1,0 +1,104 @@
+{
+  "totals": {
+    "blocks_in": 9,
+    "blocks_skipped": 0,
+    "candidates_accepted": 6,
+    "z3_unsat": 6,
+    "reductions": 6,
+    "instr_saved": 12,
+    "rewrites_wasmopt_misses": 0,
+    "wall_seconds": 0.369
+  },
+  "rows": [
+    {
+      "file": "double_add.wasm",
+      "status": "unchanged",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": null,
+      "accepted": false,
+      "z3": null,
+      "wasmopt_instr": 3
+    },
+    {
+      "file": "x_minus_zero.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    },
+    {
+      "file": "x_or_zero.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    },
+    {
+      "file": "x_plus_one.wasm",
+      "status": "unchanged",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": null,
+      "accepted": false,
+      "z3": null,
+      "wasmopt_instr": 3
+    },
+    {
+      "file": "x_plus_zero.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    },
+    {
+      "file": "x_times_one.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    },
+    {
+      "file": "x_times_two.wasm",
+      "status": "unchanged",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": null,
+      "accepted": false,
+      "z3": null,
+      "wasmopt_instr": 3
+    },
+    {
+      "file": "x_times_zero.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    },
+    {
+      "file": "x_xor_zero.wasm",
+      "status": "accepted",
+      "reason": "",
+      "original_instr": 3,
+      "rewrite_instr": 1,
+      "accepted": true,
+      "z3": "unsat",
+      "wasmopt_instr": 1
+    }
+  ]
+}
