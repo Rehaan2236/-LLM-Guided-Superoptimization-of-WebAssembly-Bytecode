@@ -1,5 +1,5 @@
 """
-proposer.py — M5: LLM candidate generation (Gemini) with a manual fallback.
+proposer.py — LLM candidate generation (Gemini) with a manual fallback.
 
 The proposer takes a DSL block and asks Gemini for SHORTER, equivalent candidate
 rewrites. It returns a list of candidate DSL programs. It never decides anything:

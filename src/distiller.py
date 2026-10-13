@@ -1,5 +1,5 @@
 """
-distiller.py — M9: peephole rule distillation and reuse.
+distiller.py — peephole rule distillation and reuse.
 
 When a rewrite is verified (passes differential testing AND Z3), we store it as a
 reusable peephole rule: an exact pattern of DSL instructions and its verified
@@ -7,7 +7,7 @@ replacement. Before asking Gemini about a new block, the pipeline first checks t
 rule store; a hit lets us reuse a proven rewrite without calling the LLM or
 re-running verification.
 
-V1 uses EXACT whole-block pattern matching (the stored pattern must equal the
+Matching is EXACT whole-block pattern matching (the stored pattern must equal the
 block's instruction list, operands included). That is intentionally simple and
 safe. Sub-sequence matching and operand generalization are V2 work.
 

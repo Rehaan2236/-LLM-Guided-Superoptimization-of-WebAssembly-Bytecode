@@ -1,18 +1,18 @@
 """
-pipeline.py — M10: the complete end-to-end pipeline.
+pipeline.py — the complete end-to-end pipeline.
 
 Flow:
   .wasm
-    -> extract basic block            (M3)
-    -> translate to DSL               (M4)
-    -> check existing peephole rules  (M9)   [reuse without LLM if hit]
-    -> propose candidates             (M5)   [Gemini, or manual fallback]
-    -> validate each candidate        (M4/DSL)
-    -> differential test              (M6)   [fast filter]
-    -> Z3 equivalence verification    (M7)   [proof]
+    -> extract basic block
+    -> translate to DSL
+    -> check existing peephole rules   [reuse without LLM if hit]
+    -> propose candidates   [Gemini, or manual fallback]
+    -> validate each candidate
+    -> differential test   [fast filter]
+    -> Z3 equivalence verification   [proof]
     -> accept the shortest verified rewrite
     -> compare instruction counts
-    -> distil a verified peephole rule (M9)
+    -> distil a verified peephole rule
 
 Nothing is faked: every verdict printed comes from the actual modules. If the
 candidate pool is empty or nothing verifies, the pipeline says so and keeps the
@@ -95,7 +95,7 @@ def optimize_block(
              max_len=cfg["max_original_instructions"],
              max_stack=cfg["max_stack_depth"])
 
-    # (M9) rule lookup first.
+    # rule lookup first.
     if verbose:
         _p("[3] Checking existing rules...")
     rules = load_rules()
@@ -115,7 +115,7 @@ def optimize_block(
     if verbose:
         _p("    [NO MATCH]")
 
-    # (M5) propose candidates, with a counterexample feedback loop:
+    # propose candidates, with a counterexample feedback loop:
     # if every Gemini candidate fails a gate, the failures (with the exact
     # inputs that broke them) are sent back to Gemini and it is asked again.
     from src.dsl import interpret, to_s32
@@ -162,7 +162,7 @@ def optimize_block(
                 _p(f"\n    Candidate {idx} [{cand.source}]:",
                    f"{serialize(cand.program)}  // {cand.reason}")
 
-            # (M4/DSL) validate
+            # validate
             if verbose:
                 _p("[5] Validating candidate...")
             try:
@@ -176,7 +176,7 @@ def optimize_block(
             if verbose:
                 _p("    [PASS]")
 
-            # (M6) differential testing
+            # differential testing
             if verbose:
                 _p("[6] Differential testing...")
             diff = differential_test(program, cand.program, num_inputs,
@@ -192,7 +192,7 @@ def optimize_block(
             if verbose:
                 _p("    [PASS]", f"{diff.tests} inputs agreed (evidence, not proof)")
 
-            # (M7) Z3 verification
+            # Z3 verification
             if verbose:
                 _p("[7] Z3 verification...")
             vr = verify(program, cand.program, num_inputs,
@@ -232,7 +232,7 @@ def optimize_block(
         _p("\n[8] Candidate ACCEPTED", "(both gates cleared)")
     _print_counts(result) if verbose else None
 
-    # (M9) distil
+    # distil
     if verbose:
         _p("[10] Distilling verified rule...")
     rule = record_rule(program, cand.program, num_inputs)

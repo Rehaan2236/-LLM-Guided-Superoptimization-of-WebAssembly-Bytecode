@@ -1,5 +1,5 @@
 """
-verifier.py — M7: Z3 SMT equivalence verification.
+verifier.py — Z3 SMT equivalence verification.
 
 This is the correctness backbone. Given two DSL programs over the same inputs,
 it proves (or disproves) that they compute the same i32 result for EVERY

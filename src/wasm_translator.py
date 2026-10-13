@@ -1,5 +1,5 @@
 """
-wasm_translator.py — M4: translation between WASM, the DSL, and WAT text.
+wasm_translator.py — translation between WASM, the DSL, and WAT text.
 
 Three directions:
   - wasm_instrs_to_dsl(instr_dicts)  : extractor JSON instructions -> DSL Instr list

@@ -1,9 +1,9 @@
 """
-difftest.py — M6: differential testing.
+difftest.py — differential testing.
 
 Run the original and candidate DSL programs on many concrete inputs and check
 they agree. This is a FAST FILTER, not a proof: it samples finitely many inputs,
-so agreement is evidence of equivalence, never a guarantee. Z3 (M7) supplies the
+so agreement is evidence of equivalence, never a guarantee. Z3 supplies the
 all-inputs guarantee.
 
 Each program is compiled to a tiny WASM module (via WABT's wat2wasm) and executed

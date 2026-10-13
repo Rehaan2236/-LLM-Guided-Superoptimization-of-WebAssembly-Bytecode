@@ -1,8 +1,8 @@
 """
-dsl.py — Constrained bitvector DSL for the WASM superoptimizer (V1).
+dsl.py — Constrained bitvector DSL for the WASM superoptimizer .
 
 This module is the foundation everything else is built on. It defines:
-  - the V1 instruction set (whitelist),
+  - the instruction set (whitelist),
   - a parser (list[str] -> list[Instr]),
   - a serializer (list[Instr] -> list[str]),
   - a stack validator (arity + depth + single result),
@@ -51,12 +51,12 @@ class OpSpec:
     """Static description of one DSL opcode."""
     name: str          # DSL mnemonic, e.g. "ADD"
     pops: int          # stack values consumed
-    pushes: int        # stack values produced (always 1 in V1)
+    pushes: int        # stack values produced (always 1)
     has_operand: bool  # True for PUSH_INPUT (index) and PUSH_CONST (value)
     wat: str           # corresponding WAT instruction (operand filled in later)
 
 
-# The V1 whitelist. 14 opcodes, none of which can trap.
+# The whitelist. 24 opcodes, none of which can trap.
 OPSPECS: dict[str, OpSpec] = {
     "PUSH_INPUT": OpSpec("PUSH_INPUT", 0, 1, True, "local.get"),
     "PUSH_CONST": OpSpec("PUSH_CONST", 0, 1, True, "i32.const"),
@@ -151,7 +151,7 @@ def validate(
     max_stack: int = 8,
 ) -> None:
     """
-    Check a program is well-formed for V1. Raises DSLError on any problem.
+    Check a program is well-formed. Raises DSLError on any problem.
 
     Guarantees on success:
       - every opcode is on the whitelist,
@@ -255,5 +255,5 @@ def interpret(program: list[Instr], inputs: list[int]) -> int:
 
 
 def instruction_count(program: list[Instr]) -> int:
-    """Cost metric for V1: number of instructions."""
+    """Cost metric: number of instructions."""
     return len(program)

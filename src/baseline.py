@@ -1,5 +1,5 @@
 """
-baseline.py — M8: baseline comparison against Binaryen wasm-opt.
+baseline.py — baseline comparison against Binaryen wasm-opt.
 
 For a given .wasm input we measure:
   - original instruction count (in the supported block) and byte size,

@@ -6,7 +6,7 @@ Run everything from the project root with the venv active:
 pytest -v
 ```
 
-43 tests pass in this environment. Tests split into **unit tests** (no external tools)
+54 tests pass. Tests split into **unit tests** (no external tools)
 and **integration tests** (need WABT / Wasmtime). Integration tests auto-skip when the
 tools are missing, so the unit suite always runs.
 

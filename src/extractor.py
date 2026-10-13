@@ -1,7 +1,7 @@
 """
-extractor.py — M3: basic-block extraction from a .wasm file.
+extractor.py — basic-block extraction from a .wasm file.
 
-V1 simplification: a "basic block" is the entire body of a function whose
+Simplification: a "basic block" is the entire body of a function whose
 signature is (param i32...) (result i32) and whose body uses only whitelisted
 straight-line instructions. Because V1 has no branches, the function body IS a
 single basic block.
